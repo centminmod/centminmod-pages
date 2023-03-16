@@ -1,1 +1,210 @@
-Index
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centmin Mod</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/3.0.0/pure-min.css" integrity="sha512-X2yGIVwg8zeG8N4xfsidr9MqIfIE8Yz1It+w2rhUJMqxUwvbVqC5OPcyRlPKYOw/bsdJut91//NO9rSbQZIPRQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        }
+        
+        pre.terminal {
+            text-align: left;
+            display: block;
+            padding: 4px 10px 4px 10px;
+            margin: 0 0 10px;
+            font-size: 10.5px;
+            line-height: 1.42857143;
+            color: #f8f8f8;
+            word-break: break-all;
+            word-wrap: break-word;
+            background-color: #000;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.column {
+    max-width: 100%;
+    padding: 1em;
+    box-sizing: border-box;
+}
+
+.column-left,
+.column-right {
+    max-width: 100%;
+}
+
+@media (min-width: 576px) {
+    .column-left {
+        max-width: 40%;
+    }
+    .column-right {
+        max-width: 60%;
+    }
+}
+
+@media (min-width: 992px) {
+    .column-left {
+        max-width: 33.33%;
+    }
+    .column-right {
+        max-width: 66.67%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .column-left {
+        max-width: 25%;
+    }
+    .column-right {
+        max-width: 75%;
+    }
+}
+
+@media (min-width: 2560px) {
+    .column-left {
+        max-width: 20%;
+    }
+    .column-right {
+        max-width: 80%;
+    }
+}
+
+@media (min-width: 3840px) {
+    .column-left {
+        max-width: 15%;
+    }
+    .column-right {
+        max-width: 85%;
+    }
+}
+
+@media (min-width: 5120px) {
+    .column-left {
+        max-width: 12%;
+    }
+    .column-right {
+        max-width: 88%;
+    }
+}
+
+.hyperlink {
+    color: #1d4da2;
+    text-decoration: none;
+}
+
+.hyperlink:hover {
+    text-decoration: underline;
+}
+
+.container {
+    max-width: 100%; /* default value */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 1em; /* Add some padding around the container */
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 750px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 970px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1200px;
+    }
+}
+
+@media (min-width: 2560px) {
+    .container {
+        max-width: 2400px;
+    }
+}
+
+@media (min-width: 3840px) {
+    .container {
+        max-width: 3600px;
+    }
+}
+
+@media (min-width: 5120px) {
+    .container {
+        max-width: 4800px;
+    }
+}
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="pure-g wrapper">
+        <div class="column column-left">
+            <h2>What is Centmin Mod?</h2>
+            <p>Centmin Mod is an automated LEMP stack installer for CentOS-based servers. It simplifies the process of setting up and managing high-performance web servers by automating the installation and configuration of essential components such as Nginx, PHP, MariaDB, and Memcached. Centmin Mod also includes built-in security enhancements, optimization features, and easy server management tools that make it a popular choice among webmasters and developers.</p>
+        </div>
+        <div class="column column-right">
+            <h2>Centmin Mod Menu</h2>
+            <p>Centmin Mod SSH command line invoked <a href="menu.html" class="hyperlink">
+
+menu</a> is below:</p>
+            <pre class="terminal">--------------------------------------------------------
+     Centmin Mod Menu 124.00stable centminmod.com     
+--------------------------------------------------------
+1).  Centmin Install
+2).  Add Nginx vhost domain
+3).  NSD setup domain name DNS
+4).  Nginx Upgrade / Downgrade
+5).  PHP Upgrade / Downgrade
+6).  XCache Re-install
+7).  APC Cache Re-install
+8).  XCache Install
+9).  APC Cache Install
+10). Memcached Server Re-install
+11). MariaDB MySQL Upgrade &amp; Management
+12). Zend OpCache Install/Re-install
+13). Install/Reinstall Redis PHP Extension
+14). SELinux disable
+15). Install/Reinstall ImagicK PHP Extension
+16). Change SSHD Port Number
+17). Multi-thread compression: zstd,pigz,pbzip2,lbzip2
+18). Suhosin PHP Extension install
+19). Install FFMPEG and FFMPEG PHP Extension
+20). NSD Install/Re-Install
+21). Data Transfer (TBA)
+22). Add Wordpress Nginx vhost + Cache Plugin
+23). Update Centmin Mod Code Base
+24). Exit
+--------------------------------------------------------
+Enter option [ 1 - 24 ] 
+</pre>
+        </div>
+    </div>
+</div> <!-- container -->
+<div class="container">
+    <div class="pure-g wrapper">
+        <div class="column">
+            <h2>Centmin Mod Installation Options</h2>
+            <p>Choose between the stable and beta versions of Centmin Mod:</p>
+            <p>For the latest 124.00stable version:</p>
+            <pre class="terminal">curl -O https://centminmod.com/installer.sh &amp;&amp; chmod 0700 installer.sh &amp;&amp; bash installer.sh</pre>
+            <p>For the 130.00beta01 version:</p>
+            <pre class="terminal">curl -O https://centminmod.com/betainstaller.sh &amp;&amp; chmod 0700 betainstaller.sh &amp;&amp; bash betainstaller.sh</pre>
+        </div>
+    </div>
+</div> <!-- container -->
+</body>
+</html>

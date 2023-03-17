@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Centmin Mod</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/3.0.0/pure-min.css" integrity="sha512-X2yGIVwg8zeG8N4xfsidr9MqIfIE8Yz1It+w2rhUJMqxUwvbVqC5OPcyRlPKYOw/bsdJut91//NO9rSbQZIPRQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preload" href="/pure-min.css" as="style">
+    <link rel="stylesheet" href="/pure-min.css">
     <style>
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -249,11 +250,12 @@ pre.terminal {
             <pre class="terminal">curl -O https://centminmod.com/installer.sh &amp;&amp; chmod 0700 installer.sh &amp;&amp; bash installer.sh</pre>
             <p>For the 130.00beta01 version with PHP 5.6, 7.0, 7.1, 7.2, 7.4, 8.0, 8.1 and 8.2 support. CentOS 7, AlmaLinux 8 and Rocky Linux 8 supported:</p>
             <pre class="terminal">curl -O https://centminmod.com/betainstaller.sh &amp;&amp; chmod 0700 betainstaller.sh &amp;&amp; bash betainstaller.sh</pre>
+            <p><b>*</b> PHP 5.6 to 7.4 EOL releases have backported security patch support</p>
 
 <div id="centmin-mod-menu-content" style="display: none;">
 <h2 id="centmin-mod-menu">Centmin Mod Menu</h2>
 <p>The heart of Centmin Mod is the shell based menu, <code>centmin.sh</code> (shown below). There are a few ways to invoke and find <code>centmin.sh</code>. You can view the different ways via the Youtube video at bottom of this page. </p>
-<p>The quickest way to invoke centmin.sh menu is using these 2 SSH commands:</p>
+<p>The quickest way to invoke centmin.sh menu is using either of these SSH commands:</p>
 <pre class="terminal">cd /usr/local/src/centminmod
 ./centmin.sh
 </pre>
@@ -265,14 +267,11 @@ pre.terminal {
 <ul>
   <li class="li-bullet">Adding a new site domain and auto generating the Nginx vhost file and directories</li>
   <li class="li-bullet">Upgrade/downgrade or recompile Nginx &amp; PHP-FPM versions</li>
-  <li class="li-bullet">Unstalling or recompiling PHP opcachers like Zend Opcache, APC Cache and Xcache</li>
   <li class="li-bullet">Recompiling Memcached server and associated Memcache, Memcached/Libmemcached PHP extensions</li>
-  <li class="li-bullet">Major upgrades for MariaDB from 5.2 to 5.5, 5.5 to 10.0, 10.0 to 10.1 (coming soon). Minor version upgrades within same branch are done via yum updates.</li>
-  <li class="li-bullet">Install ImagicK, Suhosin, FFMPEG PHP extensions</li>
+  <li class="li-bullet">Major upgrades for MariaDB from 10.3 to 10.4, 10.5, 10.6. Minor version upgrades within same branch are done via yum updates.</li>
   <li class="li-bullet">Change SSHD Port Number</li>
   <li class="li-bullet">Install Multi-threaded compression tools like pigz, bzip2, lbzip2</li>
   <li class="li-bullet">Auto install Wordpress + WP Super Cache and auto create the site Nginx vhost all in one step (menu option 22)</li>
-  <li class="li-bullet">Setup Git environment for easier updates (menu option 23)</li>
 </ul>
 </div>
 
@@ -310,6 +309,18 @@ pre.terminal {
 --------------------------------------------------------
 Enter option [ 1 - 24 ] 
 </pre>
+        </div>
+    </div>
+</div> <!-- container -->
+
+<!-- Second container starts here -->
+<div class="container">
+    <div class="pure-g wrapper">
+        <div class="column column-left">
+            <h2>Features</h2>
+        </div>
+        <div class="column column-right">
+            <!-- Add your content for the second container's right column here -->
         </div>
     </div>
 </div> <!-- container -->

@@ -13,7 +13,7 @@
         pre.terminal {
             text-align: left;
             display: block;
-            padding: 4px 10px 4px 10px;
+            padding: 4px 12px 4px 12px;
             margin: 0 0 10px;
             font-size: 10.5px;
             line-height: 1.42857143;
@@ -23,6 +23,7 @@
             background-color: #000;
             border: 1px solid #ccc;
             border-radius: 4px;
+            overflow-x: auto;
         }
 
 .wrapper {
@@ -42,57 +43,58 @@
     max-width: 100%;
 }
 
+/* Updated column max-widths */
 @media (min-width: 576px) {
     .column-left {
-        max-width: 40%;
+        max-width: 60%;
     }
     .column-right {
-        max-width: 60%;
+        max-width: 40%;
     }
 }
 
 @media (min-width: 992px) {
     .column-left {
-        max-width: 33.33%;
+        max-width: 60%;
     }
     .column-right {
-        max-width: 66.67%;
+        max-width: 40%;
     }
 }
 
 @media (min-width: 1200px) {
     .column-left {
-        max-width: 25%;
+        max-width: 60%;
     }
     .column-right {
-        max-width: 75%;
+        max-width: 40%;
     }
 }
 
 @media (min-width: 2560px) {
     .column-left {
-        max-width: 20%;
+        max-width: 60%;
     }
     .column-right {
-        max-width: 80%;
+        max-width: 40%;
     }
 }
 
 @media (min-width: 3840px) {
     .column-left {
-        max-width: 15%;
+        max-width: 60%;
     }
     .column-right {
-        max-width: 85%;
+        max-width: 40%;
     }
 }
 
 @media (min-width: 5120px) {
     .column-left {
-        max-width: 12%;
+        max-width: 60%;
     }
     .column-right {
-        max-width: 88%;
+        max-width: 40%;
     }
 }
 
@@ -111,39 +113,40 @@
     padding: 1em; /* Add some padding around the container */
 }
 
+/* Updated container max-widths */
 @media (min-width: 768px) {
     .container {
-        max-width: 750px;
+        max-width: 90%;
     }
 }
 
 @media (min-width: 992px) {
     .container {
-        max-width: 970px;
+        max-width: 95%;
     }
 }
 
 @media (min-width: 1200px) {
     .container {
-        max-width: 1200px;
+        max-width: 95%;
     }
 }
 
 @media (min-width: 2560px) {
     .container {
-        max-width: 2400px;
+        max-width: 95%;
     }
 }
 
 @media (min-width: 3840px) {
     .container {
-        max-width: 3600px;
+        max-width: 95%;
     }
 }
 
 @media (min-width: 5120px) {
     .container {
-        max-width: 4800px;
+        max-width: 95%;
     }
 }
 
@@ -186,11 +189,47 @@ header {
     <div class="pure-g wrapper">
         <div class="column column-left">
             <h2>What is Centmin Mod?</h2>
-            <p>Centmin Mod is an automated LEMP stack installer for CentOS-based servers. It simplifies the process of setting up and managing high-performance web servers by automating the installation and configuration of essential components such as Nginx, PHP, MariaDB, and Memcached. Centmin Mod also includes built-in security enhancements, optimization features, and easy server management tools that make it a popular choice among webmasters and developers.</p>
+            <p>Centmin Mod is an automated LEMP stack installer for CentOS 7, AlmaLinux 8 and Rocky Linux 8 YUM/DNF package-based Linux servers.</p>
+
+            <p>Centmin Mod LEMP web stack auto installer takes the manual work out of the process and fully automates most of install, configuration, base optimisation and best recommended practices and settings for CentOS, Nginx, MariaDB MySQL, PHP, CSF Firewall security and other installed software. The whole process is done via the core <code>centmin.sh</code> shell based script which can install Centmin Mod via a <a class="hyperlink" href="#install">curl one liner install method</a>. Centmin Mod does not have a web gui panel but rather allows the admin/owner to manage their server(s) on the SSH command line with added convenience of a <a href="#centmin-mod-menu" class="hyperlink" id="show-centmin-mod-menu-2">shell based menu</a> for commonly performed tasks.</p>
+
+            <h2 id="install">Centmin Mod Installation Options</h2>
+            <p>Choose between the stable and beta versions of Centmin Mod:</p>
+            <p>For the latest 124.00stable version with PHP 5.6, 7.0, 7.1, 7.2, 7.4, 8.0, 8.1 support. CentOS 7 only supported:</p>
+            <pre class="terminal">curl -O https://centminmod.com/installer.sh &amp;&amp; chmod 0700 installer.sh &amp;&amp; bash installer.sh</pre>
+            <p>For the 130.00beta01 version with PHP 5.6, 7.0, 7.1, 7.2, 7.4, 8.0, 8.1 and 8.2 support. CentOS 7, AlmaLinux 8 and Rocky Linux 8 supported:</p>
+            <pre class="terminal">curl -O https://centminmod.com/betainstaller.sh &amp;&amp; chmod 0700 betainstaller.sh &amp;&amp; bash betainstaller.sh</pre>
+
+<div id="centmin-mod-menu-content" style="display: none;">
+<h2 id="centmin-mod-menu">Centmin Mod Menu</h2>
+<p>The heart of Centmin Mod is the shell based menu, <code>centmin.sh</code> (shown below). There are a few ways to invoke and find <code>centmin.sh</code>. You can view the different ways via the Youtube video at bottom of this page. </p>
+<p>The quickest way to invoke centmin.sh menu is using these 2 SSH commands:</p>
+<pre class="terminal">cd /usr/local/src/centminmod
+./centmin.sh
+</pre>
+<p>or via command shortcut after exiting initial install's SSH session:</p>
+<pre class="terminal">centmin
+</pre>
+<p>The menu allows you to manage and update your Centmin Mod LEMP web stack - including:</p>
+<p></p>
+<ul>
+  <li class="li-bullet">Adding a new site domain and auto generating the Nginx vhost file and directories</li>
+  <li class="li-bullet">Upgrade/downgrade or recompile Nginx &amp; PHP-FPM versions</li>
+  <li class="li-bullet">Unstalling or recompiling PHP opcachers like Zend Opcache, APC Cache and Xcache</li>
+  <li class="li-bullet">Recompiling Memcached server and associated Memcache, Memcached/Libmemcached PHP extensions</li>
+  <li class="li-bullet">Major upgrades for MariaDB from 5.2 to 5.5, 5.5 to 10.0, 10.0 to 10.1 (coming soon). Minor version upgrades within same branch are done via yum updates.</li>
+  <li class="li-bullet">Install ImagicK, Suhosin, FFMPEG PHP extensions</li>
+  <li class="li-bullet">Change SSHD Port Number</li>
+  <li class="li-bullet">Install Multi-threaded compression tools like pigz, bzip2, lbzip2</li>
+  <li class="li-bullet">Auto install Wordpress + WP Super Cache and auto create the site Nginx vhost all in one step (menu option 22)</li>
+  <li class="li-bullet">Setup Git environment for easier updates (menu option 23)</li>
+</ul>
+</div>
+
         </div>
         <div class="column column-right">
             <h2>Centmin Mod Menu</h2>
-            <p>Centmin Mod SSH command line invoked <a href="menu.html" class="hyperlink">
+            <p>Centmin Mod SSH command line invoked <a href="#centmin-mod-menu" class="hyperlink" id="show-centmin-mod-menu">menu</a> is below:</p>
 
 menu</a> is below:</p>
             <pre class="terminal">--------------------------------------------------------
@@ -226,17 +265,44 @@ Enter option [ 1 - 24 ]
         </div>
     </div>
 </div> <!-- container -->
-<div class="container">
-    <div class="pure-g wrapper">
-        <div class="column">
-            <h2>Centmin Mod Installation Options</h2>
-            <p>Choose between the stable and beta versions of Centmin Mod:</p>
-            <p>For the latest 124.00stable version:</p>
-            <pre class="terminal">curl -O https://centminmod.com/installer.sh &amp;&amp; chmod 0700 installer.sh &amp;&amp; bash installer.sh</pre>
-            <p>For the 130.00beta01 version:</p>
-            <pre class="terminal">curl -O https://centminmod.com/betainstaller.sh &amp;&amp; chmod 0700 betainstaller.sh &amp;&amp; bash betainstaller.sh</pre>
-        </div>
-    </div>
-</div> <!-- container -->
+
+<script>
+function showHiddenContent() {
+  document.getElementById('centmin-mod-menu-content').style.display = 'block';
+}
+
+function scrollToElement(elementId) {
+  const element = document.getElementById(elementId);
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
+
+function handleClick(event, elementId) {
+  event.preventDefault();
+  event.stopPropagation();
+  showHiddenContent();
+  scrollToElement(elementId);
+}
+
+document.getElementById('show-centmin-mod-menu').addEventListener('click', function(event) {
+  handleClick(event, 'centmin-mod-menu');
+});
+
+document.getElementById('show-centmin-mod-menu-2').addEventListener('click', function(event) {
+  handleClick(event, 'centmin-mod-menu');
+});
+
+document.addEventListener('click', function(event) {
+  const menuContent = document.getElementById('centmin-mod-menu-content');
+  const showMenuButton1 = document.getElementById('show-centmin-mod-menu');
+  const showMenuButton2 = document.getElementById('show-centmin-mod-menu-2');
+  
+  if (event.target !== menuContent && event.target !== showMenuButton1 && event.target !== showMenuButton2 && !menuContent.contains(event.target)) {
+    menuContent.style.display = 'none';
+  }
+});
+</script>
+</script>
 </body>
 </html>

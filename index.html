@@ -87,6 +87,16 @@ pre.terminal {
   overflow-x: auto;
 }
 
+@media (max-width: 800px) {
+  .wrapper {
+    flex-wrap: wrap;
+  }
+  .column-left,
+  .column-right {
+    flex: 1 1 100%;
+  }
+}
+
 @media (max-width: 576px) {
   pre.terminal {
     font-size: 10px;

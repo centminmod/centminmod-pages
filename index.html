@@ -228,6 +228,19 @@ pre.terminal {
     max-width: 95%;
   }
 }
+
+.tshirt-image {
+  border: 2px solid #cccccc; /* Adjust the border width and color as needed */
+  border-radius: 8px; /* Smoother rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); /* Subtle box-shadow for a lifted appearance */
+  transition: all 0.3s ease; /* Optional: smooth transition for hover effect */
+}
+
+.tshirt-image:hover {
+  transform: translateY(-1px); /* Optional: subtle hover effect that lifts the image slightly */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: increase box-shadow on hover */
+}
+
     </style>
 </head>
 <body>
@@ -323,6 +336,32 @@ Enter option [ 1 - 24 ]
         </div>
         <div class="column column-right">
             <!-- Add your content for the second container's right column here -->
+<a href="https://shop.centminmod.com/">
+  <img
+    class="tshirt-image"
+    src="merchandise/tshirts/0031-01-2000x2000.png"
+    srcset="
+      merchandise/tshirts/0031-01-2000x2000.png 2000w,
+      merchandise/tshirts/0031-01-1400x1400.png 1400w,
+      merchandise/tshirts/0031-01-1200x1200.png 1200w,
+      merchandise/tshirts/0031-01-900x900.png 900w,
+      merchandise/tshirts/0031-01-700x700.png 700w,
+      merchandise/tshirts/0031-01-450x450.png 450w,
+      merchandise/tshirts/0031-01-370x370.png 370w
+    "
+    sizes="
+      (min-width: 5120px) 1400px,
+      (min-width: 3840px) 1200px,
+      (min-width: 2560px) 900px,
+      (min-width: 1920px) 700px,
+      (min-width: 1200px) 450px,
+      (min-width: 992px) 370px,
+      100vw
+    "
+    alt="Support Centmin Mod. Buy Centmin Mod merchandise"
+    title="Support Centmin Mod. Buy Centmin Mod merchandise"
+  />
+</a>
         </div>
     </div>
 </div> <!-- container -->

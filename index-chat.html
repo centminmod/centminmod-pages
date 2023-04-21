@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centmin Mod</title>
+    <link rel="preload" href="/pure-min.css" as="style">
+    <link rel="preconnect" href="https://static.cloudflareinsights.com" crossorigin />
+    <link rel="preconnect" href="https://cloudflareinsights.com" crossorigin />
+    <link rel="stylesheet" href="/pure-min.css">
+    <style>
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f5f5f5;
+}
+
+h2 {
+  font-weight: 600;
+  margin-bottom: 1em;
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+a {
+  color: #1d4da2;
+}
+
+a:hover {
+  color: #0e3d7b;
+}
+
+header {
+  background-color: #ffffff;
+  padding: 1em 0;
+  border-bottom: 1px solid #ddd;
+}
+
+#logo a {
+  color: #333;
+  font-size: 2em;
+  text-decoration: none;
+}
+
+#logo a span {
+  color: #333;
+}
+
+#logo a span:nth-child(2) {
+  color: #43a6df;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2em;
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+.column {
+  flex: 1;
+}
+
+.column-left,
+.column-right {
+    max-width: 100%;
+}
+
+pre.terminal {
+  padding: 1em;
+  margin-bottom: 1em;
+  font-size: 12px;
+  line-height: 1.42857143;
+  color: #f8f8f8;
+  background-color: #222;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  overflow-x: auto;
+}
+
+@media (max-width: 800px) {
+  .wrapper {
+    flex-wrap: wrap;
+  }
+  .column-left,
+  .column-right {
+    flex: 1 1 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  pre.terminal {
+    font-size: 10px;
+  }
+}
+
+/* Updated column max-widths */
+@media (min-width: 576px) {
+    .column-left {
+        max-width: 100%;
+    }
+    .column-right {
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 992px) {
+    .column-left {
+        max-width: calc(100% - 370px);
+    }
+    .column-right {
+        max-width: 370px;
+    }
+  pre.terminal {
+    font-size: 10px;
+  }
+  body {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 1200px) {
+    .column-left {
+        max-width: calc(100% - 450px);
+    }
+    .column-right {
+        max-width: 450px;
+    }
+  pre.terminal {
+    font-size: 11px;
+  }
+  body {
+    font-size: 13px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .column-left {
+    max-width: calc(100% - 700px);
+  }
+  .column-right {
+    max-width: 700px;
+  }
+  pre.terminal {
+    font-size: 18px;
+  }
+  body {
+    font-size: 21px;
+  }
+}
+
+@media (min-width: 2560px) {
+  .column-left {
+    max-width: calc(100% - 900px);
+  }
+  .column-right {
+    max-width: 900px;
+  }
+  pre.terminal {
+    font-size: 26px;
+  }
+  body {
+    font-size: 29px;
+  }
+}
+
+@media (min-width: 3840px) {
+  .column-left {
+    max-width: calc(100% - 1200px);
+  }
+  .column-right {
+    max-width: 1200px;
+  }
+  pre.terminal {
+    font-size: 33px;
+  }
+  body {
+    font-size: 39px;
+  }
+}
+
+@media (min-width: 5120px) {
+  .column-left {
+    max-width: calc(100% - 1400px);
+  }
+  .column-right {
+    max-width: 1400px;
+  }
+  pre.terminal {
+    font-size: 43px;
+  }
+  body {
+    font-size: 49px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 90%;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 95%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 95%;
+  }
+}
+
+@media (min-width: 2560px) {
+  .container {
+    max-width: 95%;
+  }
+}
+
+@media (min-width: 3840px) {
+  .container {
+    max-width: 95%;
+  }
+}
+
+@media (min-width: 5120px) {
+  .container {
+    max-width: 95%;
+  }
+}
+
+.tshirt-image {
+  border: 2px solid #cccccc; /* Adjust the border width and color as needed */
+  border-radius: 8px; /* Smoother rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); /* Subtle box-shadow for a lifted appearance */
+  transition: all 0.3s ease; /* Optional: smooth transition for hover effect */
+  width: 100%;
+  height: auto;
+}
+
+.tshirt-image:hover {
+  transform: translateY(-1px); /* Optional: subtle hover effect that lifts the image slightly */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: increase box-shadow on hover */
+}
+
+    </style>
+</head>
+<body>
+<header>
+    <div class="container">
+        <div id="logo">
+            <a href=""><span>Centmin</span> <span>Mod</span></a>
+        </div>
+    </div>
+</header>
+<div class="container">
+    <div class="pure-g wrapper">
+        <div class="column column-left">
+            <h2>What is Centmin Mod?</h2>
+            <p>Centmin Mod is an automated LEMP stack installer for CentOS 7, AlmaLinux 8 and Rocky Linux 8 YUM/DNF package-based Linux servers.</p>
+
+            <p>Centmin Mod LEMP web stack auto installer takes the manual work out of the process and fully automates most of install, configuration, base optimisation and best recommended practices and settings for CentOS, Nginx, MariaDB MySQL, PHP, CSF Firewall security and other installed software. The whole process is done via the core <code>centmin.sh</code> shell based script which can install Centmin Mod via a <a class="hyperlink" href="#install">curl one liner install method</a>. Centmin Mod does not have a web gui panel but rather allows the admin/owner to manage their server(s) on the SSH command line with added convenience of a <a href="#centmin-mod-menu" class="hyperlink" id="show-centmin-mod-menu-2">shell based menu</a> for commonly performed tasks.</p>
+
+            <h2 id="install">Centmin Mod Installation Options</h2>
+            <p>Choose between the stable and beta versions of Centmin Mod:</p>
+            <p>For the latest 124.00stable version with PHP 5.6, 7.0, 7.1, 7.2, 7.4, 8.0, 8.1 support. CentOS 7 only supported:</p>
+            <pre class="terminal">curl -O https://centminmod.com/installer.sh &amp;&amp; chmod 0700 installer.sh &amp;&amp; bash installer.sh</pre>
+            <p>For the 130.00beta01 version with PHP 5.6, 7.0, 7.1, 7.2, 7.4, 8.0, 8.1 and 8.2 support. CentOS 7, AlmaLinux 8 and Rocky Linux 8 supported:</p>
+            <pre class="terminal">curl -O https://centminmod.com/betainstaller.sh &amp;&amp; chmod 0700 betainstaller.sh &amp;&amp; bash betainstaller.sh</pre>
+            <p><b>*</b> PHP 5.6 to 7.4 EOL releases have backported security patch support</p>
+
+<div id="centmin-mod-menu-content" style="display: none;">
+<h2 id="centmin-mod-menu">Centmin Mod Menu</h2>
+<p>The heart of Centmin Mod is the shell based menu, <code>centmin.sh</code> (shown below). There are a few ways to invoke and find <code>centmin.sh</code>. You can view the different ways via the Youtube video at bottom of this page. </p>
+<p>The quickest way to invoke centmin.sh menu is using either of these SSH commands:</p>
+<pre class="terminal">cd /usr/local/src/centminmod
+./centmin.sh
+</pre>
+<p>or via command shortcut after exiting initial install's SSH session:</p>
+<pre class="terminal">centmin
+</pre>
+<p>The menu allows you to manage and update your Centmin Mod LEMP web stack - including:</p>
+<p></p>
+<ul>
+  <li class="li-bullet">Adding a new site domain and auto generating the Nginx vhost file and directories</li>
+  <li class="li-bullet">Upgrade/downgrade or recompile Nginx &amp; PHP-FPM versions</li>
+  <li class="li-bullet">Recompiling Memcached server and associated Memcache, Memcached/Libmemcached PHP extensions</li>
+  <li class="li-bullet">Major upgrades for MariaDB from 10.3 to 10.4, 10.5, 10.6. Minor version upgrades within same branch are done via yum updates.</li>
+  <li class="li-bullet">Change SSHD Port Number</li>
+  <li class="li-bullet">Install Multi-threaded compression tools like pigz, bzip2, lbzip2</li>
+  <li class="li-bullet">Auto install Wordpress + WP Super Cache and auto create the site Nginx vhost all in one step (menu option 22)</li>
+</ul>
+</div>
+
+        </div>
+        <div class="column column-right">
+            <h2>Centmin Mod Menu</h2>
+            <p>Centmin Mod SSH command line invoked <a href="#centmin-mod-menu" class="hyperlink" id="show-centmin-mod-menu">menu</a> is below:</p>
+            <pre class="terminal">--------------------------------------------------------
+     Centmin Mod Menu 124.00stable centminmod.com     
+--------------------------------------------------------
+1).  Centmin Install
+2).  Add Nginx vhost domain
+3).  NSD setup domain name DNS
+4).  Nginx Upgrade / Downgrade
+5).  PHP Upgrade / Downgrade
+6).  XCache Re-install
+7).  APC Cache Re-install
+8).  XCache Install
+9).  APC Cache Install
+10). Memcached Server Re-install
+11). MariaDB MySQL Upgrade &amp; Management
+12). Zend OpCache Install/Re-install
+13). Install/Reinstall Redis PHP Extension
+14). SELinux disable
+15). Install/Reinstall ImagicK PHP Extension
+16). Change SSHD Port Number
+17). Multi-thread compression: zstd,pigz,pbzip2,lbzip2
+18). Suhosin PHP Extension install
+19). Install FFMPEG and FFMPEG PHP Extension
+20). NSD Install/Re-Install
+21). Data Transfer (TBA)
+22). Add Wordpress Nginx vhost + Cache Plugin
+23). Update Centmin Mod Code Base
+24). Exit
+--------------------------------------------------------
+Enter option [ 1 - 24 ] 
+</pre>
+        </div>
+    </div>
+</div> <!-- container -->
+
+<!-- Second container starts here -->
+<div class="container">
+    <div class="pure-g wrapper">
+        <div class="column column-left">
+            <h2>Chat</h2>
+              <div class="askai-frame-embed" data-id="8WYtu7b6lznYTSW8CkmWT0rLUVYNX2"></div>
+              <script defer type="text/javascript" src="https://centminmod.com/embed-js-min"></script>
+        </div>
+        <div class="column column-right">
+            <!-- Add your content for the second container's right column here -->
+<a href="https://shop.centminmod.com/">
+  <img
+    class="tshirt-image"
+    src="merchandise/tshirts/0031-01-2000x2000.png"
+    srcset="
+      merchandise/tshirts/0031-01-2000x2000.png 2000w,
+      merchandise/tshirts/0031-01-1400x1400.png 1400w,
+      merchandise/tshirts/0031-01-1200x1200.png 1200w,
+      merchandise/tshirts/0031-01-900x900.png 900w,
+      merchandise/tshirts/0031-01-700x700.png 700w,
+      merchandise/tshirts/0031-01-450x450.png 450w,
+      merchandise/tshirts/0031-01-370x370.png 370w
+    "
+    sizes="
+      (min-width: 5120px) 1400px,
+      (min-width: 3840px) 1200px,
+      (min-width: 2560px) 900px,
+      (min-width: 1440px) 700px,
+      (min-width: 1201px) and (max-width: 1350px) 700px,
+      (min-width: 1098px) and (max-width: 1200px) 450px,
+      (min-width: 992px) and (max-width: 1097px) 370px,
+      (min-width: 701px) and (max-width: 991px) 370px,
+      (min-width: 370px) and (max-width: 700px) 370px,
+      (min-device-pixel-ratio: 1.8) and (max-device-pixel-ratio: 3) and (max-device-width: 375px) and (max-device-height: 833px) 450px,
+      100vw
+    "
+    alt="Support Centmin Mod. Buy Centmin Mod merchandise"
+    title="Support Centmin Mod. Buy Centmin Mod merchandise"
+  />
+</a>
+        </div>
+    </div>
+</div> <!-- container -->
+
+<script>
+function showHiddenContent() {
+  document.getElementById('centmin-mod-menu-content').style.display = 'block';
+}
+
+function scrollToElement(elementId) {
+  const element = document.getElementById(elementId);
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
+
+function handleClick(event, elementId) {
+  event.preventDefault();
+  event.stopPropagation();
+  showHiddenContent();
+  scrollToElement(elementId);
+}
+
+document.getElementById('show-centmin-mod-menu').addEventListener('click', function(event) {
+  handleClick(event, 'centmin-mod-menu');
+});
+
+document.getElementById('show-centmin-mod-menu-2').addEventListener('click', function(event) {
+  handleClick(event, 'centmin-mod-menu');
+});
+
+document.addEventListener('click', function(event) {
+  const menuContent = document.getElementById('centmin-mod-menu-content');
+  const showMenuButton1 = document.getElementById('show-centmin-mod-menu');
+  const showMenuButton2 = document.getElementById('show-centmin-mod-menu-2');
+  
+  if (event.target !== menuContent && event.target !== showMenuButton1 && event.target !== showMenuButton2 && !menuContent.contains(event.target)) {
+    menuContent.style.display = 'none';
+  }
+});
+</script>
+</body>
+</html>
